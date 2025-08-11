@@ -1,0 +1,175 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Gothic A1', sans-serif;
+}
+
+#game-container {
+    width: 100%;
+    height: 100%;
+    background-image: url('BackGround_01.jpg'); /* 같은 폴더에 BackGround_01.jpg 파일 필요 */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.clickable-object {
+    position: absolute;
+    /* 개발용: 오브젝트 위치 확인을 위한 보더. 실제 게임에서는 아래 라인 주석 처리 또는 삭제 */
+    /* border: 2px dashed rgba(255, 0, 0, 0.7); */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.clickable-object:hover {
+    background-color: rgba(255, 255, 0, 0.3);
+}
+
+#door-plate {
+    position: absolute;
+    bottom: 12%;
+    left: 81%;
+    transform: translateX(-50%);
+    color: #8B4513; /* 어두운 갈색 */
+    background-color: rgba(210, 180, 140, 0.6); /* 반투명 황갈색 */
+    padding: 2px 5px;
+    font-size: 14px;
+    font-family: 'Times New Roman', Times, serif;
+    border: 1px solid #654321;
+}
+
+
+/* 모달 스타일 */
+#modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#modal-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    min-height: 300px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#modal-title {
+    margin-top: 0;
+}
+
+#modal-close-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.modal-hidden {
+    display: none !important;
+}
+
+/* 샹들리에 게임 스타일 */
+.gem {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 10px;
+    cursor: pointer;
+    border: 3px solid #ccc;
+}
+
+/* 달력 게임 스타일 */
+#calendar-pieces {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+#calendar-dropzone {
+    width: 310px;
+    height: 220px;
+    border: 2px dashed #aaa;
+    margin: 0 auto;
+    padding: 5px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.calendar-piece {
+    width: 150px;
+    height: 100px;
+    border: 1px solid #000;
+    text-align: center;
+    line-height: 100px;
+    cursor: grab;
+    background-color: #fff8dc;
+}
+
+/* 촛대 게임 스타일 */
+.candle {
+    width: 50px;
+    height: 100px;
+    background-color: #f0e68c;
+    margin: 10px;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    border: 2px solid #daa520;
+    border-radius: 5px 5px 0 0;
+}
+.candle.lit::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    width: 15px;
+    height: 15px;
+    background-color: orange;
+    border-radius: 50%;
+    box-shadow: 0 0 15px 5px orange;
+}
+.candle p {
+    margin-bottom: 10px;
+    font-size: 14px;
+    background-color: white;
+    padding: 2px;
+    border-radius: 3px;
+}
+
+/* 문 비밀번호 입력 스타일 */
+#password-input-area {
+    margin-bottom: 20px;
+}
+#password-input-area input {
+    width: 50px;
+    height: 60px;
+    font-size: 40px;
+    text-align: center;
+    margin: 0 5px;
+}
+#password-hints {
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+    padding-top: 15px;
+}
+#password-hints p {
+    margin: 5px 0;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>방탈출: 잊혀진 서재</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- 클릭 가능한 오브젝트들 -->
+        <div class="clickable-object" id="chandelier" style="top: 10%; left: 35%; width: 30%; height: 30%;"></div>
+        <div class="clickable-object" id="desk" style="top: 65%; left: 15%; width: 35%; height: 25%;"></div>
+        <div class="clickable-object" id="candlestick" style="top: 55%; left: 60%; width: 10%; height: 15%;"></div>
+        <div class="clickable-object" id="door" style="top: 30%; left: 75%; width: 20%; height: 60%;"></div>
+        
+        <!-- 철문 아래 명패 -->
+        <div id="door-plate">EST. 1925</div>
+    </div>
+
+    <!-- 모달창 -->
+    <div id="modal" class="modal-hidden">
+        <div id="modal-content">
+            <h2 id="modal-title"></h2>
+            <div id="modal-game-area"></div>
+            <div id="modal-message-area"></div>
+            <button id="modal-close-button">닫기</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
